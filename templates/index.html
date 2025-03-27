@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+</head>
+<body>
+    <h2>Send Emails</h2>
+    <form method="POST">
+        <button type="submit">Send Emails to All Recipients</button>
+    </form>
+
+    <h2>Update Recipients</h2>
+    <form method="POST" action="/update_recipients">
+        <textarea name="recipients" rows="10" cols="50">
+{% for email, name in recipients %}
+{{ email }},{{ name }}
+{% endfor %}
+        </textarea>
+        <br>
+        <button type="submit">Update Recipients</button>
+    </form>
+</body>
+</html>
+
